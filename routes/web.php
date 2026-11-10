@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Livewire\CategoryManager;
 use App\Livewire\TaskManager;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,5 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     Route::get('/tasks', TaskManager::class)->name('tasks.index');
+    Route::get('/categories', CategoryManager::class)->name('categories.index');
 });
