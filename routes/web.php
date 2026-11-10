@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Livewire\TaskManager;
 use Illuminate\Support\Facades\Route;
 
 // Guest Authentication Routes
@@ -19,4 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/tasks', TaskManager::class)->name('tasks.index');
 });
